@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍콩의 가성비 좋은 고급호텔 TOP5</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #7b1fa2;
+            margin-bottom: 20px;
+        }
+
+        p.intro {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .hotelbox {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .carousel {
+            position: relative;
+            /* max-width: 100%; */
+            width: 550px;
+            height: auto;
+            max-height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            align-self: center;
+        }
+
+        .carousel .image2 {
+            width: 100%;
+            display: none;
+        }
+
+        .carousel .image2.active {
+            display: block;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-controls button {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: #37474f;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        h5 {
+            font-size: 1.1rem;
+            color: #512da8;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin: 10px 0 20px 20px;
+            padding: 0;
+        }
+
+        ul li {
+            font-size: 0.95rem;
+            color: #616161;
+        }
+
+        @media (min-width: 768px) {
+            .hotelbox {
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .hotelbox .content {
+                flex-grow: 1;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const carousels = document.querySelectorAll(".carousel");
+
+            carousels.forEach(carousel => {
+                const images = carousel.querySelectorAll(".image2");
+                let currentIndex = 0;
+
+                const prevButton = carousel.querySelector(".prev");
+                const nextButton = carousel.querySelector(".next");
+
+                function updateCarousel(index) {
+                    images.forEach((img, i) => {
+                        img.classList.toggle("active", i === index);
+                    });
+                }
+
+                prevButton.addEventListener("click", () => {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    updateCarousel(currentIndex);
+                });
+
+                nextButton.addEventListener("click", () => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    updateCarousel(currentIndex);
+                });
+
+                updateCarousel(currentIndex);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>홍콩의 가성비 좋은 고급호텔 TOP5</h1>
+        <p class="intro">안녕하세요! 날씨가 좋네요. 홍콩 여행을 계획하고 계신다면, 가성비 좋은 고급호텔 리스트를 확인해보세요!</p>
+
+        <div class="hotelbox">
+            <div class="carousel">
+                <!-- <div class="image2" style="background: url(https://pix8.agoda.net/hotelImages/37754807/0/237a201547656428406570693326d45c.jpg?ce=0&s=1024x768); background-size: cover; background-position: center; width: 100%; height: 300px;"></div>
+                <div class="image2" style="background: url(https://pix8.agoda.net/hotelImages/37754807/0/ac2ac11caea77e48a6add13b435caf18.jpg?ce=0&s=1024x768); background-size: cover; background-position: center; width: 100%; height: 300px;"></div> -->
+                <img class="image2 active" src="https://pix8.agoda.net/hotelImages/37754807/0/237a201547656428406570693326d45c.jpg?ce=0&s=1024x768" alt="호텔 이미지" class="active">
+                <img class="image2" src="https://pix8.agoda.net/hotelImages/37754807/0/ac2ac11caea77e48a6add13b435caf18.jpg?ce=0&s=1024x768" alt="호텔 이미지 2">
+                <div class="carousel-controls">
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+            <div class="content">
+                <h3>호텔명</h3>
+                <p>이 호텔은 훌륭한 시설과 친절한 서비스를 제공합니다. 완벽한 위치와 함께 편안한 휴식을 제공합니다.</p>
+                <h5>주위 가볼만한 곳</h5>
+                <ul>
+                    <li>랜드마크 1</li>
+                    <li>랜드마크 2</li>
+                    <li>랜드마크 3</li>
+                </ul>
+                <h5>호텔 시설, 특징, 교통</h5>
+                <ul>
+                    <li>무료 와이파이</li>
+                    <li>수영장</li>
+                    <li>대중교통 접근성</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Add more hotelboxes as needed -->
+    </div>
+</body>
+</html>
